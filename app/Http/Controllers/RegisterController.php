@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Sentinel;
 use Activation;
 use App\User;
+use Mail;
 
 class RegisterController extends Controller
 {
@@ -22,6 +23,19 @@ class RegisterController extends Controller
 
         $role->users()->attach($user);
 
-        return redirect('/');
+        $this->sendActivationEmail($user, $activation->code);
+
+        return redirect('login');
+    }
+
+    private function sendActivationEmail($user, $code)
+    {
+        Mail::send('emails.activation', [
+            'user' => $user,
+            'code' => $code
+        ], function($message) use ($user) {
+            $message->to($user->email);
+            $message->subject("Hello $user->first_name, activate your account.");
+        });
     }
 }
