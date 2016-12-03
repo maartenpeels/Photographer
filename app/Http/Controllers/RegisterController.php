@@ -30,6 +30,7 @@ class RegisterController extends Controller
 
     private function sendActivationEmail($user, $code)
     {
+
         Mail::send('emails.activation', [
             'user' => $user,
             'code' => $code

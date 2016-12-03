@@ -31,7 +31,7 @@
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
 
-                                <input type="text" name="lst_name" class="form-control" placeholder="Last Name">
+                                <input type="text" name="last_name" class="form-control" placeholder="Last Name">
                             </div>
                         </div>
 
