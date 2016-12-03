@@ -1,6 +1,6 @@
 # Photographer
 
-Photographer is a web application that let's you share your photos/albums as a photorapher.
+Photographer is a web application that let's you share your photos/albums as a photographer.
 
 ## Official Documentation
 
